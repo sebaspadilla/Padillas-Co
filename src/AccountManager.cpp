@@ -1,8 +1,9 @@
 #include "AccountManager.h"
-#include "Account.h"
+#include "AdultAccount.h"
 #include <iostream>
 #include <string>
 #include <map>
+#include <limits>
 
 using namespace std;
 
@@ -19,13 +20,18 @@ int AccountManager::openAccount() {
     cout << "Enter the holder's surname: ";
     cin >> surname;
     cout << "Enter the holder's age: ";
-    cin >> age;
+    if (!(cin >> age)) {
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "Invalid input.  Try again: ";
+        return 1;
+    }
 
     //TODO:check if entered values are correct (unit test?)
-
+    
     id = AccountManager::accMap.size() + 1;
 
-    accMap.insert(make_pair(id, new Account(id, name, surname, age)));
+    accMap.insert(make_pair(id, new AdultAccount(id, name, surname, age)));
 
     cout << "\nAccount created with ID " << id << endl;
 
@@ -49,4 +55,3 @@ int AccountManager::viewAccount() {
 
     return 0;
 }
-

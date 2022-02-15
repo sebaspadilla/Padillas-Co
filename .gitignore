@@ -1,2 +1,4 @@
 build/
 .vscode/
+User.cpp
+User.h

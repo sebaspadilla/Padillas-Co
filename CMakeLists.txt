@@ -5,4 +5,10 @@ cmake_minimum_required(VERSION 3.0)
 project(PadillasCo)
 
 # Add all the source files needed to build the executable
-add_executable(PadillasCo src/main.cpp src/Account.cpp src/AccountManager.cpp)
+add_executable(
+    PadillasCo
+    src/main.cpp
+    src/Account.cpp
+    src/AccountManager.cpp
+    src/AdultAccount.cpp
+)

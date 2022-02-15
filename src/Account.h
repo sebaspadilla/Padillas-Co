@@ -6,15 +6,16 @@
 using std::string;
 
 class Account {
-    private:
+    protected:
         const short id;
         string name;
         string surname;
         short age;
-        bool isAdult;
+        const bool isAdult;
+        int credit;
 
     public:
-        Account(short id, string name, string surname, short age);
+        Account(short id, string name, string surname, short age, bool isAdult);
         short getId();
         string getName();
         string getSurname();
@@ -22,6 +23,8 @@ class Account {
         bool getIsAdult();
 
         void printAccount();
+        void addCredit(int amount);
+        virtual void withdrawCredit(int amount) = 0;
 };
 
 #endif
