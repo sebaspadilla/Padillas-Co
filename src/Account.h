@@ -8,8 +8,8 @@ using std::string;
 class Account {
     protected:
         const short id;
-        string name;
-        string surname;
+        const string name;
+        const string surname;
         short age;
         const bool isAdult;
         int credit;
@@ -22,9 +22,11 @@ class Account {
         short getAge();
         bool getIsAdult();
 
+        void setAge(short newAge);
+
         void printAccount();
-        void addCredit(int amount);
-        virtual void withdrawCredit(int amount) = 0;
+        void addCredit();
+        virtual int withdrawCredit() = 0;
 };
 
 #endif

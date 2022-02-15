@@ -7,12 +7,16 @@ int main() {
     AccountManager* accManager = new AccountManager();
     int option = 0;
 
-    cout << "\nWelcome to Padillas-Co" << endl;
-    while (option != 5) {
+    cout << "\n--------------------------------" << endl;
+    cout << "---  Welcome to Padillas-Co  ---" << endl;
+    cout << "--------------------------------\n\n";
+    while (option != 7) {
         cout << "Select an option: " << endl;
         cout << "[1] Create a new account" << endl;
         cout << "[2] View an existing account" << endl;
-        cout << "[5] Quit" << endl;
+        cout << "[3] Manage an account" << endl;
+        cout << "[4] Delete an account" << endl;
+        cout << "[7] Quit" << "\n\n" << "Selection: ";
         cin >> option;
         cout << endl;
 
@@ -25,7 +29,15 @@ int main() {
                 accManager->viewAccount();
                 break;
 
-            case 5:
+            case 3:
+                accManager->manageAccount();
+                break;
+
+            case 4:
+                accManager->deleteAccount();
+                break;
+
+            case 7:
                 cout << "Goodbye :)" << endl;
                 break;
 

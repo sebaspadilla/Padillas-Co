@@ -8,10 +8,13 @@ class AccountManager {
 
     private:
         std::map<short, Account*> accMap;
+        Account* selectAccount();
     
     public:
         int openAccount();
         int viewAccount();
+        int manageAccount();
+        int deleteAccount();
 
 };
 

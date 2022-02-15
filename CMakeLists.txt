@@ -11,4 +11,5 @@ add_executable(
     src/Account.cpp
     src/AccountManager.cpp
     src/AdultAccount.cpp
+    src/KidAccount.cpp
 )

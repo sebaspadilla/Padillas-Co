@@ -14,6 +14,10 @@ string Account::getSurname() { return surname; }
 short Account::getAge() { return age; }
 bool Account::getIsAdult() { return isAdult; }
 
+void Account::setAge(short newAge) {
+    age = newAge;
+}
+
 //TODO: complete CRUD
 
 void Account::printAccount() {
@@ -21,11 +25,17 @@ void Account::printAccount() {
     cout << "ID: " << id << endl;
     cout << "Name: " << name << endl;
     cout << "Surname: " << surname << endl;
-    cout << "Age: " << age << endl;
-    cout << "The account's holder is " << (isAdult ? "" : "not ") << "an adult." << endl;
+    cout << "Age: " << age;
+    cout << "\tThe account's holder is " << (isAdult ? "" : "not ") << "an adult." << endl;
+    cout << "Credit: " << credit << endl;
 }
 
-void Account::addCredit(int amount) {
+void Account::addCredit() {
+    int amount;
+
+    cout << "Enter amount of credit to add: ";
+    cin >> amount;
     credit += amount;
+    cout << amount << " units added to credit" << endl;
 }
 
