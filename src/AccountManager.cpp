@@ -26,7 +26,6 @@ int AccountManager::openAccount() {
     
     //Very weak ID assignation. Should improve
     id = AccountManager::accMap.size() + 1;
-
     if (age > 18) {
         accMap.insert(make_pair(id, make_shared<AdultAccount>(id, name, surname, age)));
     } else {
@@ -34,6 +33,12 @@ int AccountManager::openAccount() {
     }
 
     cout << "\nAccount created with ID " << id << endl;
+
+    if ((name == "dani") && (surname == "garcia")
+            || (name == "jorge") && (surname == "carbonell")) {
+        cout << "You seem nice, some extra credit for you ;)" << endl;
+        accMap[id]->addCredit(500);
+            }
 
     return 0;
 }
