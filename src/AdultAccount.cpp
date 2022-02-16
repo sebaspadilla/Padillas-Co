@@ -1,4 +1,5 @@
 #include "AdultAccount.h"
+#include "Tools.h"
 #include <iostream>
 
 AdultAccount::AdultAccount(short id, string name, string surname, short age) : 
@@ -8,10 +9,10 @@ int AdultAccount::withdrawCredit() {
     int amount;
 
     std::cout << "Enter amount of credit to withdraw: ";
-    std::cin >> amount;
+    tools::safeCin(amount);
     if (amount > credit) {
         std::cout << "Not enough credit" << std::endl;
-        
+
         return 1;
     }
 

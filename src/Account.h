@@ -25,7 +25,7 @@ class Account {
         void setAge(short newAge);
 
         void printAccount();
-        void addCredit();
+        void addCredit(int amount);
         virtual int withdrawCredit() = 0;
 };
 

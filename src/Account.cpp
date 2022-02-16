@@ -1,4 +1,5 @@
 #include "Account.h"
+#include "Tools.h"
 #include <iostream>
 #include <string>
 
@@ -30,11 +31,7 @@ void Account::printAccount() {
     cout << "Credit: " << credit << endl;
 }
 
-void Account::addCredit() {
-    int amount;
-
-    cout << "Enter amount of credit to add: ";
-    cin >> amount;
+void Account::addCredit(int amount) {
     credit += amount;
     cout << amount << " units added to credit" << endl;
 }

@@ -1,4 +1,5 @@
 #include "AccountManager.h"
+#include "Tools.h"
 #include <iostream>
 
 using namespace std;
@@ -16,8 +17,9 @@ int main() {
         cout << "[2] View an existing account" << endl;
         cout << "[3] Manage an account" << endl;
         cout << "[4] Delete an account" << endl;
+        cout << "[5] View open accounts" << endl;
         cout << "[7] Quit" << "\n\n" << "Selection: ";
-        cin >> option;
+        tools::safeCin<int>(option);
         cout << endl;
 
         switch (option) {
@@ -35,6 +37,10 @@ int main() {
 
             case 4:
                 accManager->deleteAccount();
+                break;
+
+            case 5:
+                accManager->printAccountsList();
                 break;
 
             case 7:
