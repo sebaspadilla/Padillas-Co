@@ -19,8 +19,6 @@ void Account::setAge(short newAge) {
     age = newAge;
 }
 
-//TODO: complete CRUD
-
 void Account::printAccount() {
     cout << "ACCOUNT INFO:" << endl;
     cout << "ID: " << id << endl;

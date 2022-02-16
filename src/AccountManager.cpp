@@ -23,9 +23,8 @@ int AccountManager::openAccount() {
     tools::safeCin<string>(surname);
     cout << "Enter the holder's age: ";
     tools::safeCin<short>(age);
-
-    //TODO:check if entered values are correct (unit test?)
     
+    //Very weak ID assignation. Should improve
     id = AccountManager::accMap.size() + 1;
 
     if (age > 18) {
@@ -108,7 +107,6 @@ int AccountManager::deleteAccount() {
     if (acc == NULL) { return 1; }
 
     accMap.erase(acc->getId());
-    //TODO:change account pointers for smart_pointers
     cout << "Account " << acc->getId() << " deleted (" << acc->getName();
     cout << " " << acc->getSurname() << ")" << endl;
 }
@@ -118,7 +116,6 @@ shared_ptr<Account> AccountManager::selectAccount() {
 
     cout << "Enter the account's ID: ";
     tools::safeCin<short>(id);
-    //TODO: todas partes donde se introduzca un int hacer check?
     if (accMap.find(id) == accMap.end()) {
         cout << "No account exists with the given ID" << endl;
         return NULL;

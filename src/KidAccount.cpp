@@ -6,4 +6,6 @@ KidAccount::KidAccount(short id, string name, string surname, short age) :
 
 int KidAccount::withdrawCredit() {
     std::cout << "Kids cannot withdraw credit" << std::endl;
+
+    return 0;
 }
