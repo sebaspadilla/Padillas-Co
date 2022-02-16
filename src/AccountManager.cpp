@@ -76,7 +76,7 @@ int AccountManager::manageAccount() {
         switch(option) {
             case 1:
                 int amount;
-                cout << "Enter amount of credit to add: ";
+                cout << "Enter an amount of credit to add: ";
                 tools::safeCin<int>(amount);
                 acc->addCredit(amount);
                 break;
@@ -87,7 +87,7 @@ int AccountManager::manageAccount() {
 
             case 3:
                 short newAge;
-                cout << "New age: ";
+                cout << "Enter the new age: ";
                 tools::safeCin<short>(newAge);
                 acc->setAge(newAge);
                 break;
@@ -114,6 +114,8 @@ int AccountManager::deleteAccount() {
     accMap.erase(acc->getId());
     cout << "Account " << acc->getId() << " deleted (" << acc->getName();
     cout << " " << acc->getSurname() << ")" << endl;
+
+    return 0;
 }
 
 shared_ptr<Account> AccountManager::selectAccount() {

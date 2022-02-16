@@ -6,6 +6,7 @@
 using std::string;
 
 class Account {
+
     protected:
         const short id;
         const string name;

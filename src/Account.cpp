@@ -15,9 +15,7 @@ string Account::getSurname() { return surname; }
 short Account::getAge() { return age; }
 bool Account::getIsAdult() { return isAdult; }
 
-void Account::setAge(short newAge) {
-    age = newAge;
-}
+void Account::setAge(short newAge) { age = newAge; }
 
 void Account::printAccount() {
     cout << "ACCOUNT INFO:" << endl;
@@ -33,4 +31,3 @@ void Account::addCredit(int amount) {
     credit += amount;
     cout << amount << " units added to credit" << endl;
 }
-

@@ -17,7 +17,6 @@ class AccountManager {
         int manageAccount();
         int deleteAccount();
         void printAccountsList();
-
 };
 
 #endif
